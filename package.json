@@ -23,10 +23,10 @@
     "typescript": "^3.6.4"
   },
   "source": "lib/index.js",
-  "main": "dist/useReducer.js",
-  "module": "dist/useReducer.mjs",
-  "unpkg": "dist/useReducer.umd.js",
-  "types": "dist/useReducer.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
