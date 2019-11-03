@@ -2,12 +2,8 @@
   "name": "use-reduction",
   "version": "1.0.0",
   "description": "Simplify your reducer hooks",
-  "main": "index.js",
   "directories": {
     "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "react",
@@ -22,6 +18,17 @@
     "react": "^16.11.0"
   },
   "devDependencies": {
-    "react": "^16.11.0"
+    "microbundle": "^0.11.0",
+    "react": "^16.11.0",
+    "typescript": "^3.6.4"
+  },
+  "source": "lib/index.js",
+  "main": "dist/useReducer.js",
+  "module": "dist/useReducer.mjs",
+  "unpkg": "dist/useReducer.umd.js",
+  "types": "dist/useReducer.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
   }
 }
