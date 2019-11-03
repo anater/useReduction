@@ -1,6 +1,6 @@
 {
   "name": "use-reduction",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simplify your reducer hooks",
   "files": [
     "dist"
@@ -28,9 +28,9 @@
   "unpkg": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle --name=useReduction --globals react=React",
     "dev": "microbundle watch",
-    "prepublishOnly": "microbundle --name=useReduction"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
