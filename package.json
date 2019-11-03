@@ -2,9 +2,9 @@
   "name": "use-reduction",
   "version": "1.0.0",
   "description": "Simplify your reducer hooks",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react",
     "hooks",
@@ -29,6 +29,7 @@
   "types": "dist/useReducer.d.ts",
   "scripts": {
     "build": "microbundle",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "prepublishOnly": "microbundle --name=useReduction"
   }
 }
