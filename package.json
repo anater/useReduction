@@ -1,0 +1,27 @@
+{
+  "name": "use-reduction",
+  "version": "1.0.0",
+  "description": "Simplify your reducer hooks",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "reducer",
+    "redux",
+    "flux"
+  ],
+  "author": "Andrew Nater",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.11.0"
+  },
+  "devDependencies": {
+    "react": "^16.11.0"
+  }
+}
