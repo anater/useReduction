@@ -31,5 +31,9 @@
     "build": "microbundle",
     "dev": "microbundle watch",
     "prepublishOnly": "microbundle --name=useReduction"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anater/useReduction.git"
   }
 }
