@@ -22,7 +22,7 @@
     "react": "^16.11.0",
     "typescript": "^3.6.4"
   },
-  "source": "lib/index.js",
+  "source": "lib/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "unpkg": "dist/index.umd.js",
