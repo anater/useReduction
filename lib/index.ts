@@ -1,4 +1,4 @@
-import { useReducer, Reducer, Dispatch } from "react";
+import { useReducer, Reducer, Dispatch, useMemo } from "react";
 
 type Action<T, P> = {
   type: T;
@@ -19,7 +19,8 @@ export default function useReduction<S, A>(
   debug = false
 ): [S, ActionMap<A>] {
   const [state, dispatch] = useReducer(makeReducer(reducerMap), initialState);
-  return [state, makeActions(reducerMap, dispatch, debug)];
+  const actions = useMemo(() => makeActions(reducerMap, dispatch, debug), [reducerMap]);
+  return [state, actions];
 }
 
 function makeReducer<S, A>(reducerMap: ReducerMap<S, A>) {
