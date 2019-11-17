@@ -39,7 +39,7 @@ const reducer = {
   increment: (count, { payload }) => count + payload,
   decrement: (count, { payload }) => count - payload
 };
-const [state, actions] = useReduction(0, reducer);
+const [state, actions] = useReduction(initialState, reducer);
 ```
 
 The hook returns the current state and an object with action creators. When an action creator is called, an action (`{ type, payload }`) will be dispatched to update your state.
