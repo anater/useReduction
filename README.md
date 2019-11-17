@@ -31,27 +31,15 @@ _Note_: React is a peer dependency. Its assumed you already have this installed 
 
 ## Usage
 
-Import
-
 ```javascript
 import useReduction from "use-reduction";
-```
-
-Script (global as `useReduction`)
-
-```html
-<script src="https://unpkg.com/use-reduction/dist/index.umd.js"></script>
-```
-
-### Setup
-
-Call the hook with an initial state and a reducer object:
-
-```javascript
-const [count, actions] = useReduction(0, {
+// Call the hook with an initial state and a reducer object:
+const initialState = 0;
+const reducer = {
   increment: (count, { payload }) => count + payload,
   decrement: (count, { payload }) => count - payload
-});
+};
+const [state, actions] = useReduction(0, reducer);
 ```
 
 The hook returns the current state and an object with action creators. When an action creator is called, an action (`{ type, payload }`) will be dispatched to update your state.
