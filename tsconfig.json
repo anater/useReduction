@@ -1,0 +1,12 @@
+{
+  "exclude": ["node_modules", "*.test.ts"],
+  "include": ["lib/**/*.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "module": "es6",
+    "target": "es6",
+    "moduleResolution": "node"
+  }
+}
