@@ -1,4 +1,4 @@
-import useReduction from "./index";
+import useReduction from "../lib";
 
 const [state, actions] = useReduction(0, {
   reset(state, action) { 
