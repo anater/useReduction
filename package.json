@@ -1,6 +1,6 @@
 {
   "name": "use-reduction",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Simplify your reducer hooks",
   "files": [
     "dist"
