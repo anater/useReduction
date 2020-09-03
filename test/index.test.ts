@@ -1,10 +1,13 @@
 import useReduction from "../lib";
 
 const [state, actions] = useReduction(0, {
-  reset(state, action) { 
-    return 0
+  reset() {
+    return 0;
   },
-  increment: (state, {payload}) => state + payload
+  increment: (state, { payload }: { payload: number }) => state + payload,
+  incrementByOne: (state) => state + 1,
 });
 
-actions.increment()
+actions.reset();
+actions.increment(5);
+actions.incrementByOne();
