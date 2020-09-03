@@ -39,6 +39,7 @@ const reducer = {
   increment: (count, { payload }) => count + payload,
   decrement: (count, { payload }) => count - payload
 };
+
 const [state, actions] = useReduction(initialState, reducer);
 ```
 

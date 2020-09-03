@@ -19,9 +19,11 @@ export default function useReduction<S, A>(
   debug = false
 ): [S, ActionMap<A>] {
   const [state, dispatch] = useReducer(makeReducer(reducerMap), initialState);
-  const actions = useMemo(() => makeActions(reducerMap, dispatch, debug), [
-    reducerMap,
-  ]);
+  const actions = useMemo(
+    () => makeActions(reducerMap, dispatch, debug),
+    [reducerMap]
+  );
+
   return [state, actions];
 }
 
@@ -43,6 +45,7 @@ function makeActions<S, A>(
   debug: boolean
 ): ActionMap<A> {
   const types = Object.keys(reducerMap) as Array<keyof A>;
+
   return types.reduce((actions: ActionMap<A>, type: keyof A) => {
     // if there isn't already an action with this type
     if (!actions[type]) {
