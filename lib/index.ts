@@ -1,16 +1,16 @@
-import { useReducer, Reducer, Dispatch } from "react";
+import { useReducer, Reducer, Dispatch, useMemo } from "react";
 
 type Action<T, P> = {
   type: T;
-  payload?: P;
+  payload: P;
 };
 
 type ActionMap<A> = {
-  [K in keyof A]: (payload?: any) => void;
+  [K in keyof A]: (payload?: A[K]) => void;
 };
 
 type ReducerMap<S, A> = {
-  [K in keyof A]: Reducer<S, Action<K, any>>;
+  [K in keyof A]: Reducer<S, Action<K, A[K]>>;
 };
 
 export default function useReduction<S, A>(
@@ -19,7 +19,12 @@ export default function useReduction<S, A>(
   debug = false
 ): [S, ActionMap<A>] {
   const [state, dispatch] = useReducer(makeReducer(reducerMap), initialState);
-  return [state, makeActions(reducerMap, dispatch, debug)];
+  const actions = useMemo(
+    () => makeActions(reducerMap, dispatch, debug),
+    [reducerMap]
+  );
+
+  return [state, actions];
 }
 
 function makeReducer<S, A>(reducerMap: ReducerMap<S, A>) {
@@ -40,20 +45,18 @@ function makeActions<S, A>(
   debug: boolean
 ): ActionMap<A> {
   const types = Object.keys(reducerMap) as Array<keyof A>;
-  return types.reduce(
-    (actions: ActionMap<A>, type: keyof A) => {
-      // if there isn't already an action with this type
-      if (!actions[type]) {
-        // dispatches action with type and payload when called
-        actions[type] = (payload: any) => {
-          const action = { type, payload };
-          dispatch(action);
-          // optionally log actions
-          if (debug) console.log(action);
-        };
-      }
-      return actions;
-    },
-    {} as ActionMap<A>
-  );
+
+  return types.reduce((actions: ActionMap<A>, type: keyof A) => {
+    // if there isn't already an action with this type
+    if (!actions[type]) {
+      // dispatches action with type and payload when called
+      actions[type] = (payload: any) => {
+        const action = { type, payload };
+        dispatch(action);
+        // optionally log actions
+        if (debug) console.log(action);
+      };
+    }
+    return actions;
+  }, {} as ActionMap<A>);
 }
