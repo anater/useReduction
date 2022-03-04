@@ -1,6 +1,6 @@
 {
   "name": "use-reduction",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Simplify your reducer hooks",
   "files": [
     "dist"
@@ -18,9 +18,9 @@
     "react": "^16.11.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.11",
-    "react": "^16.8.0",
-    "typescript": "^3.6.4"
+    "@types/react": "^17.0.0",
+    "react": "^16.11.0 || ^17.0.0",
+    "typescript": "^4.6.2"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
