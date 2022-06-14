@@ -1,6 +1,6 @@
 {
   "name": "use-reduction",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Simplify your reducer hooks",
   "files": [
     "dist"
@@ -15,11 +15,11 @@
   "author": "Andrew Nater",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.11.0 || ^17.0.0"
+    "react": "^16.11.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "react": "^16.11.0 || ^17.0.0",
+    "@types/react": "^18.0.0",
+    "react": "^16.11.0 || ^17.0.0 || ^18.0.0",
     "typescript": "^4.6.2"
   },
   "main": "dist/index.js",
